@@ -19,7 +19,7 @@ export interface UpdateFormProps {
 }
 
 const UpdateForm : React.FC<UpdateFormProps> = (props) => {
-  const [formVals] = useState <FormValueType>({
+  const [formVals, setFormVals] = useState <FormValueType>({
     dw_opening_size: props.values.dw_opening_size,
     dw_community_name: props.values.dw_community_name,
     dw_building_number: props.values.dw_building_number,
@@ -34,11 +34,19 @@ const UpdateForm : React.FC<UpdateFormProps> = (props) => {
     updateModalVisible,
   } = props;
 
+  const handleNext = async () => {
+    const fieldsValue = await form.validateFields();
+
+    setFormVals({ ...formVals, ...fieldsValue });
+
+  
+  handleUpdate({ ...formVals, ...fieldsValue });
+  };
   const renderFooter = () => {
       return (
         <>
           <Button onClick={() => handleUpdateModalVisible()}>取消</Button>
-          <Button type="primary" onClick={() => handleUpdate()}>
+          <Button type="primary" onClick={() => handleNext()}>
             完成
           </Button>
         </>

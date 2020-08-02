@@ -8,6 +8,7 @@ import UpdateForm from './components/UpdateForm'
 
 const OrderList : React.FC<{}> = () => {
   const actionRef = useRef<ActionType>();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [selectedRowsState, setSelectedRows] = useState<TableListItem[]>([]);
   const [stepFormValues, setStepFormValues] = useState({});
   const [updateModalVisible, handleUpdateModalVisible] = useState<boolean>(false);
@@ -74,7 +75,9 @@ const OrderList : React.FC<{}> = () => {
       />
       {stepFormValues && Object.keys(stepFormValues).length ? (
         <UpdateForm
-          onSubmit={async () => {
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          onSubmit={async (value) => {
+              
             // const success = await handleUpdate(value);
             // if (success) {
                handleUpdateModalVisible(false);
