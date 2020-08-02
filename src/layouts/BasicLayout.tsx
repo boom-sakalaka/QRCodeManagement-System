@@ -18,7 +18,6 @@ import RightContent from '@/components/GlobalHeader/RightContent';
 import { ConnectState } from '@/models/connect';
 import { getAuthorityFromRouter } from '@/utils/utils';
 import logo from '../assets/logo.svg';
-
 const noMatch = (
   <Result
     status={403}
@@ -121,24 +120,23 @@ const BasicLayout: React.FC<BasicLayoutProps> = (props) => {
   const authorized = getAuthorityFromRouter(props.route.routes, location.pathname || '/') || {
     authority: undefined,
   };
-  const { formatMessage } = useIntl();
-
+  const {} = useIntl();
   return (
     <ProLayout
       logo={logo}
-      formatMessage={formatMessage}
       onCollapse={handleMenuCollapse}
       onMenuHeaderClick={() => history.push('/')}
       menuItemRender={(menuItemProps, defaultDom) => {
         if (menuItemProps.isUrl || !menuItemProps.path) {
           return defaultDom;
         }
+
         return <Link to={menuItemProps.path}>{defaultDom}</Link>;
       }}
       breadcrumbRender={(routers = []) => [
         {
           path: '/',
-          breadcrumbName: formatMessage({ id: 'menu.home' }),
+          breadcrumbName: '首页',
         },
         ...routers,
       ]}

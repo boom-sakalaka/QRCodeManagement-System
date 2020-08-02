@@ -31,7 +31,7 @@ export default defineConfig({
       component: '../layouts/UserLayout',
       routes: [
         {
-          name: 'login',
+          name: '登录',
           path: '/user/login',
           component: './user/login',
         },
@@ -48,11 +48,11 @@ export default defineConfig({
           routes: [
             {
               path: '/',
-              redirect: '/welcome',
+              redirect: '/order',
             },
             {
               path: '/welcome',
-              name: 'welcome',
+              name: '欢迎',
               icon: 'smile',
               component: './Welcome',
             },
@@ -73,10 +73,24 @@ export default defineConfig({
               ],
             },
             {
-              name: 'list.table-list',
+              name: '基础表格',
               icon: 'table',
               path: '/list',
               component: './ListTableList',
+            },
+            {
+              path: '/order',
+              name: '订单管理',
+              icon: 'table',
+              routes: [
+                {
+                  path: '/order/orderList',
+                  name: '订单列表',
+                  icon: 'smile',
+                  component: './orderList',
+                  authority: ['admin'],
+                },
+              ],
             },
             {
               component: './404',
