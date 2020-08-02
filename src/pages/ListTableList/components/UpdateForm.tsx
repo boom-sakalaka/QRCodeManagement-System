@@ -13,7 +13,7 @@ export interface FormValueType extends Partial<TableListItem> {
 
 export interface UpdateFormProps {
   onCancel: (flag?: boolean, formVals?: FormValueType) => void;
-  onSubmit: (values: FormValueType) => void;
+  onSubmit: (values?: FormValueType) => void;
   updateModalVisible: boolean;
   values: Partial<TableListItem>;
 }

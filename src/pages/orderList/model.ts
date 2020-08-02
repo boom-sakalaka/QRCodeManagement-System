@@ -2,8 +2,15 @@ import { Effect, Reducer } from 'umi';
 import { message } from 'antd';
 import { queryOrderList } from './service';
 
+
+interface RequestData {
+  data: any[];
+  success: boolean;
+  total: number;
+}
+
 export interface OrderListStateType {
-  orderData?: any[];
+  orderData?: RequestData;
 }
 export interface MyOrderListType {
   namespace: string;
@@ -19,7 +26,11 @@ export interface MyOrderListType {
 const Model: MyOrderListType = {
   namespace: 'MyOrderList',
   state: {
-    orderData: [],
+    orderData: {
+      data: [],
+      success: false,
+      total: 0
+    },
   },
   effects: {
     *getOrderList({ payload }, { call, put }) {
