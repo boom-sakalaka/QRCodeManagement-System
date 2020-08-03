@@ -48,7 +48,7 @@ export default defineConfig({
           routes: [
             {
               path: '/',
-              redirect: '/order/orderList3',
+              redirect: '/order/orderList',
             },
             {
               path: '/welcome',
