@@ -88,7 +88,12 @@ export default defineConfig({
                   name: '订单列表',
                   icon: 'smile',
                   component: './orderList',
-                  authority: ['admin'],
+                },
+                {
+                  path: '/order/addOrder',
+                  name: '新增订单',
+                  icon: 'smile',
+                  component: './AddOrder',
                 },
               ],
             },
