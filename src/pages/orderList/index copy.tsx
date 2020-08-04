@@ -20,8 +20,7 @@
 //   )
 // }
 
-
 // export default connect(
-//   ({ MyOrderList }: {MyOrderList: OrderListStateType}) => 
+//   ({ MyOrderList }: {MyOrderList: OrderListStateType}) =>
 //   ({data: MyOrderList.orderData}))
 //   (OrderList);
