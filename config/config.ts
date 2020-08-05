@@ -25,6 +25,35 @@ export default defineConfig({
     ie: 11,
   },
   // umi routes: https://umijs.org/docs/routing
+
+  // {
+  //   path: '/welcome',
+  //   name: '欢迎',
+  //   icon: 'smile',
+  //   component: './Welcome',
+  // },
+  // {
+  //   path: '/admin',
+  //   name: 'admin',
+  //   icon: 'crown',
+  //   component: './Admin',
+  //   authority: ['admin'],
+  //   routes: [
+  //     {
+  //       path: '/admin/sub-page',
+  //       name: 'sub-page',
+  //       icon: 'smile',
+  //       component: './Welcome',
+  //       authority: ['admin'],
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: '基础表格',
+  //   icon: 'table',
+  //   path: '/list',
+  //   component: './ListTableList',
+  // },
   routes: [
     {
       path: '/user',
@@ -51,34 +80,6 @@ export default defineConfig({
               redirect: '/order/orderList',
             },
             {
-              path: '/welcome',
-              name: '欢迎',
-              icon: 'smile',
-              component: './Welcome',
-            },
-            {
-              path: '/admin',
-              name: 'admin',
-              icon: 'crown',
-              component: './Admin',
-              authority: ['admin'],
-              routes: [
-                {
-                  path: '/admin/sub-page',
-                  name: 'sub-page',
-                  icon: 'smile',
-                  component: './Welcome',
-                  authority: ['admin'],
-                },
-              ],
-            },
-            {
-              name: '基础表格',
-              icon: 'table',
-              path: '/list',
-              component: './ListTableList',
-            },
-            {
               path: '/order',
               name: '订单管理',
               icon: 'table',
@@ -94,6 +95,19 @@ export default defineConfig({
                   name: '新增订单',
                   icon: 'smile',
                   component: './AddOrder',
+                },
+              ],
+            },
+            {
+              path: '/management',
+              name: '条码管理',
+              icon: 'table',
+              routes: [
+                {
+                  path: '/management/print',
+                  name: '条码列表',
+                  icon: 'smile',
+                  component: './QrcodePrint',
                 },
               ],
             },

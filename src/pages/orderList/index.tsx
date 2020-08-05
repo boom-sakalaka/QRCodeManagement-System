@@ -1,4 +1,6 @@
 import React, { useState, useRef } from 'react';
+import { PlusOutlined } from '@ant-design/icons';
+import { Button } from 'antd';
 import ProTable, { ProColumns, ActionType } from '@ant-design/pro-table';
 import { TableListItem } from './data';
 import { queryOrderList } from './service';
@@ -6,7 +8,7 @@ import HoleDataForm from './components/HoleDataForm';
 
 const OrderList: React.FC<{}> = () => {
   const actionRef = useRef<ActionType>();
-  // const [selectedRowsState, setSelectedRows] = useState<TableListItem[]>([]);
+  const [selectedRowsState, setSelectedRows] = useState<TableListItem[]>([]);
   const [stepFormValues, setStepFormValues] = useState({});
   const [HoleDataFormVisible, setHoleDataFormVisible] = useState(false); // 是否显示洞口表格
   const columns: ProColumns<TableListItem>[] = [
@@ -55,7 +57,9 @@ const OrderList: React.FC<{}> = () => {
       },
     },
   ];
-
+  const handleDelete = (val: any) => {
+    console.log(val);
+  };
   return (
     <>
       <ProTable<TableListItem>
@@ -64,11 +68,16 @@ const OrderList: React.FC<{}> = () => {
         columns={columns}
         rowKey="dw_opening_size"
         request={(params, sorter, filter) => queryOrderList({ ...params, sorter, filter })}
-        // rowSelection={{
-        //   onChange: (text, selectedRows) => {
-        //     setSelectedRows(selectedRows);
-        //   },
-        // }}
+        toolBarRender={() => [
+          <Button type="primary" onClick={() => handleDelete(selectedRowsState)}>
+            <PlusOutlined /> 批量删除
+          </Button>,
+        ]}
+        rowSelection={{
+          onChange: (text, selectedRows) => {
+            setSelectedRows(selectedRows);
+          },
+        }}
       />
       {stepFormValues && Object.keys(stepFormValues).length ? (
         <HoleDataForm

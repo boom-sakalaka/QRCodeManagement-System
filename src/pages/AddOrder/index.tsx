@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Input, Row, Col, Table, Button } from 'antd';
 import { PageContainer } from '@ant-design/pro-layout';
 import styles from './index.less';
 
 const AddOrder: React.FC<{}> = () => {
-  // const [rowSelection, setSelectedRows] = useState<any[]>([]);
-  // const [rowSelectionTwo, setRowSelection] = useState<any[]>([]);
+  const [rowSelection, setSelectedRows] = useState<any[]>([]);
+  const [rowSelectionTwo, setRowSelection] = useState<any[]>([]);
   const formItmelayout = {
     labelCol: { span: 10 },
     wrapperCol: { span: 14 },
@@ -216,7 +216,10 @@ const AddOrder: React.FC<{}> = () => {
       dw_effect_picture: '',
     },
   ];
-
+  const handleDelTableData = () => {
+    console.log(rowSelection);
+    console.log(rowSelectionTwo);
+  };
   return (
     <PageContainer>
       <div className={styles.formData}>
@@ -271,14 +274,16 @@ const AddOrder: React.FC<{}> = () => {
           <Button type="primary" style={{ margin: 10 }}>
             新增
           </Button>
-          <Button type="primary">删除</Button>
+          <Button type="primary" onClick={handleDelTableData}>
+            删除
+          </Button>
         </div>
         <Table
           columns={columns}
           dataSource={dataSource}
-          // rowSelection={{
-          //   onChange: (text, selectedRow) => setSelectedRows(selectedRow),
-          // }}
+          rowSelection={{
+            onChange: (text, selectedRow) => setSelectedRows(selectedRow),
+          }}
         />
       </div>
       <div className={styles.caveEntranceTableBox}>
@@ -291,9 +296,9 @@ const AddOrder: React.FC<{}> = () => {
         <Table
           dataSource={data}
           columns={columnss}
-          // rowSelection={{
-          //   onChange: (text, selectedRow) => setRowSelection(selectedRow),
-          // }}
+          rowSelection={{
+            onChange: (text, selectedRow) => setRowSelection(selectedRow),
+          }}
         />
       </div>
     </PageContainer>
