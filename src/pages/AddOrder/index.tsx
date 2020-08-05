@@ -7,8 +7,8 @@ const AddOrder: React.FC<{}> = () => {
   const [rowSelection, setSelectedRows] = useState<any[]>([]);
   const [rowSelectionTwo, setRowSelection] = useState<any[]>([]);
   const formItmelayout = {
-    labelCol: { span: 10 },
-    wrapperCol: { span: 14 },
+    labelCol: { span: 4 },
+    wrapperCol: { span: 20 },
   };
   const columns = [
     {

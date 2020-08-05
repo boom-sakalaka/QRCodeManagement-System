@@ -35,9 +35,15 @@
   "lint-staged": {
     "**/*.less": "stylelint --syntax less",
     "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
-    "**/*.{js,jsx,tsx,ts,less,md,json}": ["prettier --write"]
+    "**/*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier --write"
+    ]
   },
-  "browserslist": ["> 1%", "last 2 versions", "not ie <= 10"],
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 10"
+  ],
   "dependencies": {
     "@ant-design/icons": "^4.0.0",
     "@ant-design/pro-layout": "^6.2.5",
@@ -48,6 +54,7 @@
     "moment": "^2.25.3",
     "omit.js": "^2.0.2",
     "path-to-regexp": "2.4.0",
+    "qrcode.react": "^1.0.0",
     "qs": "^6.9.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -63,6 +70,7 @@
     "@types/history": "^4.7.2",
     "@types/jest": "^26.0.0",
     "@types/lodash": "^4.14.144",
+    "@types/qrcode.react": "^1.0.1",
     "@types/qs": "^6.5.3",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.8.4",
@@ -90,7 +98,9 @@
     "puppeteer-core": "^5.0.0",
     "stylelint": "^13.0.0"
   },
-  "engines": { "node": ">=10.0.0" },
+  "engines": {
+    "node": ">=10.0.0"
+  },
   "checkFiles": [
     "src/**/*.js*",
     "src/**/*.ts*",
