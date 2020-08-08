@@ -112,6 +112,19 @@ export default defineConfig({
               ],
             },
             {
+              path: '/basicInformation',
+              name: '基础资料',
+              icon: 'table',
+              routes: [
+                {
+                  path: '/basicInformation/ProductArchive',
+                  name: '产品档案',
+                  icon: 'smile',
+                  component: './ProductArchive',
+                },
+              ],
+            },
+            {
               component: './404',
             },
           ],
