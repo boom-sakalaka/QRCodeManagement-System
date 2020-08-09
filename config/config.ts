@@ -122,6 +122,67 @@ export default defineConfig({
                   icon: 'smile',
                   component: './ProductArchive',
                 },
+                {
+                  path: '/basicInformation/ManufacturerProfile',
+                  name: '制造商档案',
+                  icon: 'smile',
+                  component: './ManufacturerProfile',
+                },
+                {
+                  path: '/basicInformation/SeriesFile',
+                  name: '系列档案',
+                  icon: 'smile',
+                  component: './SeriesFile',
+                },
+                {
+                  path: '/basicInformation/MaterialFile',
+                  name: '材质档案',
+                  icon: 'smile',
+                  component: './MaterialFile',
+                },
+                {
+                  path: '/basicInformation/StandardFile',
+                  name: '执行标准档案',
+                  icon: 'smile',
+                  component: './StandardFile',
+                },
+                {
+                  path: '/basicInformation/ConstructionPartyFiles',
+                  name: '施工方档案',
+                  icon: 'smile',
+                  component: './ConstructionPartyFiles',
+                },
+                {
+                  path: '/basicInformation/QualityAssurerFile',
+                  name: '质检方档案',
+                  icon: 'smile',
+                  component: './QualityAssurerFile',
+                },
+                {
+                  path: '/basicInformation/StoreFile',
+                  name: '门店档案',
+                  icon: 'smile',
+                  component: './StoreFile',
+                },
+                {
+                  path: '/basicInformation/DesignerProfile',
+                  name: '设计师档案',
+                  icon: 'smile',
+                  component: './DesignerProfile',
+                },
+              ],
+            },
+            {
+              path: '/SystemSettings',
+              name: '系统设置',
+              icon: 'table',
+              routes: [
+                {
+                  path: '/SystemSettings/UserManagement',
+                  name: '用户管理',
+                  icon: 'smile',
+                  component: './UserManagement',
+                },
               ],
             },
             {

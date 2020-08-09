@@ -129,6 +129,7 @@ const ProductArchive: React.FC<{}> = () => {
   const [rowSelectionTwo, setRowSelection] = useState<any[]>([]);
   const handleGetSelectData = (text: any, selectedRow: any) => {
     setRowSelection(selectedRow);
+    // eslint-disable-next-line no-console
     console.log(rowSelectionTwo);
   };
   return (
