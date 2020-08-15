@@ -1,10 +1,11 @@
-import { DefaultFooter, MenuDataItem, getMenuData, getPageTitle } from '@ant-design/pro-layout';
+import { MenuDataItem, getMenuData, getPageTitle } from '@ant-design/pro-layout';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Link, SelectLang, useIntl, ConnectProps, connect } from 'umi';
 import React from 'react';
 import { ConnectState } from '@/models/connect';
 import logo from '../assets/logo.svg';
 import styles from './UserLayout.less';
+
 export interface UserLayoutProps extends Partial<ConnectProps> {
   breadcrumbNameMap: {
     [path: string]: MenuDataItem;
@@ -18,6 +19,7 @@ const UserLayout: React.FC<UserLayoutProps> = (props) => {
     },
   } = props;
   const { routes = [] } = route;
+  /*eslint-disable*/
   const {
     children,
     location = {
@@ -50,11 +52,10 @@ const UserLayout: React.FC<UserLayoutProps> = (props) => {
                 <span className={styles.title}>Ant Design</span>
               </Link>
             </div>
-            <div className={styles.desc}>Ant Design 是西湖区最具影响力的 Web 设计规范</div>
+            <div className={styles.desc}> </div>
           </div>
           {children}
         </div>
-        <DefaultFooter />
       </div>
     </HelmetProvider>
   );
